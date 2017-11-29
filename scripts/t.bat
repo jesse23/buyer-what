@@ -1,2 +1,2 @@
 @echo off
-invoke ionic serve
+invoke npm run ionic:serve
