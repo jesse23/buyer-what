@@ -1,0 +1,22 @@
+stages:
+  - install
+  - build
+
+install:
+   image: node:6
+   stage: install
+   script:
+     - npm install
+   only:
+     - master
+   artifacts:
+     paths:
+       - node_modules/
+
+build:
+   image: node:6
+   stage: build
+   script:
+     - npm run build
+   only:
+     - master
