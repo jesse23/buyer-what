@@ -5,7 +5,7 @@
   "homepage": "https://github.com/jesse23",
   "private": true,
   "scripts": {
-    "clean": "ionic-app-scripts clean",
+    "clean": "ionic-app-scripts clean && gulp clean",
     "build": "ionic-app-scripts build",
     "lint": "ionic-app-scripts lint",
     "ionic:build": "ionic-app-scripts build",
@@ -32,7 +32,10 @@
   },
   "devDependencies": {
     "@ionic/app-scripts": "3.1.2",
-    "typescript": "2.4.2"
+    "typescript": "2.4.2",
+    "gulp": "3.9.0",
+    "q": "1.5.0",
+    "del": "1.0.0"
   },
   "description": "An Ionic project"
 }
