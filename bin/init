@@ -1,0 +1,3 @@
+#!/bin/ksh
+export NODE_HOME=~/Project/node-v6.12.0-darwin-x64
+export PATH=./node_modules/.bin:./bin:$NODE_HOME:$NODE_HOME/bin:$NODE_HOME/node_modules/npm/bin/node-gyp-bin:$PATH
