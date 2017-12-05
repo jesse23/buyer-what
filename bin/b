@@ -1,0 +1,2 @@
+#!/bin/ksh
+exec npm run build
