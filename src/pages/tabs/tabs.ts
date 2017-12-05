@@ -9,12 +9,11 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: 'tabs.html'
 })
 export class TabsPage {
+  constructor(translate: TranslateService) {
+    translate.setDefaultLang('es');
+  }
 
   tab1Root = HomePage;
   tab2Root = AboutPage;
   tab3Root = ContactPage;
-
-  constructor(translate: TranslateService) {
-    translate.setDefaultLang('en');
-  }
 }
