@@ -3,6 +3,8 @@
 #+BEGIN_SRC sh
   git -c http.sslVerify=false clone https://gitlab.com/jesse23/buyer-what ~/Project/buyer-what
 #+END_SRC
+** Home Test IP 
+   http://192.168.1.114:8100
 ** Task List
 *** DONE Setup a Tab Example Project
 *** DONE Bootstrap with gitlab and local batch

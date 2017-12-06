@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { AboutPage } from '../about/about';
 import { ContactPage } from '../contact/contact';
 import { ShippingPage } from '../shipping/shipping';
-import { HomePage } from '../home/home';
+import { OrderPage } from '../order/order';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -15,7 +15,7 @@ export class TabsPage {
     translate.setDefaultLang('zh');
   }
 
-  tab1Root = HomePage;
+  tab1Root = OrderPage;
   tab2Root = ContactPage;
   tab3Root = ShippingPage;
   tab4Root = AboutPage;

@@ -1,6 +1,8 @@
 {
   "POST": "发款",
+
   "ORDER": "订单",
+  "PAID": "已付?",
   "PURCHASE": "买货",
   "SHIPPING": "发货",
   "ABOUT": "关于"

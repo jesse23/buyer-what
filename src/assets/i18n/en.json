@@ -1,6 +1,9 @@
 {
   "POST": "Post",
+
   "ORDER": "Order",
+  "PAID": "Paid?",
+
   "PURCHASE": "Purchase",
   "SHIPPING": "Shipping",
   "ABOUT": "About"

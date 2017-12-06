@@ -5,8 +5,8 @@ import { MyApp } from './app.component';
 
 import { AboutPage } from '../pages/about/about';
 import { ShippingPage } from '../pages/shipping/shipping';
+import { OrderPage } from '../pages/order/order';
 import { ContactPage } from '../pages/contact/contact';
-import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -26,7 +26,7 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
     AboutPage,
     ShippingPage,
     ContactPage,
-    HomePage,
+    OrderPage,
     TabsPage
   ],
   imports: [
@@ -47,7 +47,7 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
     AboutPage,
     ContactPage,
     ShippingPage,
-    HomePage,
+    OrderPage,
     TabsPage
   ],
   providers: [
