@@ -1,0 +1,49 @@
+* Buyers
+  https://gitlab.com/jesse23/buyer-what
+#+BEGIN_SRC sh
+  git -c http.sslVerify=false clone https://gitlab.com/jesse23/buyer-what ~/Project/buyer-what
+#+END_SRC
+** Task List
+*** DONE Setup a Tab Example Project
+*** DONE Bootstrap with gitlab and local batch
+*** DONE i18n framework ( zh and en )
+**** DONE Make i18N work
+**** DONE Make i18N setting globally
+*** DONE basic 4 tabs: Order, Buy, Ship
+*** DONE Workflow
+    Post -> Order -> (Payment) -> Purchase -> Shipping
+
+    1. One post may got to multiple order.
+    2. One purchase can do multiple order together.
+    3. Purchase and order maybe dynamic and changable.
+**** Post ( In wechat )
+     What: Apple airpods
+     Brand: Apple
+     Origin Price: $160
+     List Price: $200
+     Expire Date: Next Monday
+**** Order
+     Who:  John Snow
+     Count: 2
+     ( When: Thursday )
+**** Purchase
+     Where: Somerset Apple Stroe
+     When:  Sunday
+**** Shipping
+     Shipping Type:  A ( $2/LB, 2LB )
+     Shipping Name: John Snow Jr
+     Shipping Address: 4763 Holland Dr, Troy MI, 48085
+     When:  Next Tuestday
+     Checking: every week after next Tuesday
+*** TODO Order Page design
+     What: Apple airpods
+     Who:  John Snow
+     Paid: Yes/No
+     Brand: Apple
+     Origin Price: $160
+     List Price: $200
+     Count: 2
+*** TODO Table data structure behind the tab view
+** Future
+*** Get input from wechat and dealmoon
+*** Sync data with csv on oneDrive

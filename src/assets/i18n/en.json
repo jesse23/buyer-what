@@ -1,3 +1,7 @@
 {
-  "HELLO": "Hello"
+  "POST": "Post",
+  "ORDER": "Order",
+  "PURCHASE": "Purchase",
+  "SHIPPING": "Shipping",
+  "ABOUT": "About"
 }
