@@ -1,8 +1,11 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      {{'ORDER' | translate}}
-    </ion-title>
+    <ion-title>{{'ORDER' | translate}}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="push()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+</ion-buttons>
   </ion-navbar>
 </ion-header>
 
@@ -16,7 +19,6 @@
   <ion-item>
     <ion-icon name="leaf" item-start></ion-icon>
     <ion-label>Apple iphoneX</ion-label>
-    <ion-toggle checked="false"></ion-toggle>
   </ion-item>
 </ion-list>
 </ion-content>

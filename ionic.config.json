@@ -3,6 +3,7 @@
   "app_id": "buyers",
   "type": "ionic-angular",
   "integrations": {
-    "cordova": {}
+    "cordova": {},
+    "gulp": {}
   }
 }

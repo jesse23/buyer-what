@@ -37,7 +37,7 @@
      Shipping Address: 4763 Holland Dr, Troy MI, 48085
      When:  Next Tuestday
      Checking: every week after next Tuesday
-*** TODO Order Page design
+*** TODO New Order Page design
      What: Apple airpods
      Who:  John Snow
      Paid: Yes/No
@@ -49,3 +49,18 @@
 ** Future
 *** Get input from wechat and dealmoon
 *** Sync data with csv on oneDrive
+** Trouble shoot
+*** You have not accepted the license… Android SDK Platform 26
+#+BEGIN_SRC
+Hi. Today I encountered this problem as well. However, changing the engine name to 6.2.3 was not enough for me. Nor was the solution suggested here: https://stackoverflow.com/questions/40383323/cant-accept-license-agreement-android-sdk-platform-2448.
+
+What I did was download Android Studio. Then I updated the SDK version using the SDK manager provided by Android Studio (Tools/Android/SDK Manager). In the Android SDK Location click on the Edit button. There I was prompted with the option to update to API 27.
+
+After updating, I created a new dummy android project (empty activity). After the project was created, the TODO console gave me the option to download the missing sdk components. There I was prompted with the ‘Accept licence’ popup. After accepting, I was able to build my ionic project without this error.
+#+END_SRC
+** Android
+   1. Install Android SDK
+   2. Install SDK 24 and proper Image ( ATOM_x64 on windows )
+   3. Set ANDROID_HOME correctly.
+   4. ionic cordova emulate android
+   5. ionic cordova run android --prod --release
