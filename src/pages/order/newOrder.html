@@ -5,6 +5,22 @@
 </ion-header>
 
 <ion-content >
+  <ion-item>
+  <ion-input placeholder="What"></ion-input>
+  </ion-item>
+  <ion-item>
+  <ion-input placeholder="Who"></ion-input>
+  </ion-item>
+  <ion-item>
+  <ion-input placeholder="Cost"></ion-input>
+  </ion-item>
+  <ion-item>
+  <ion-input placeholder="Price"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Paid?</ion-label>
+    <ion-toggle checked="false"></ion-toggle>
+  </ion-item>
     <button ion-button block color="secondary" (click)="createOrder()">
       {{'CREATE ORDER' | translate}}
     </button>
