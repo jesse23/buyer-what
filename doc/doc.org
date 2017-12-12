@@ -37,14 +37,14 @@
      Shipping Address: 4763 Holland Dr, Troy MI, 48085
      When:  Next Tuestday
      Checking: every week after next Tuesday
-*** TODO New Order Page design
+*** DONE New Order Page design
      What: Apple airpods
      Who:  John Snow
      Paid: Yes/No
      Brand: Apple
      (Origin Price: $160)
      List Price: $200
-*** TODO Table data structure behind the tab view
+*** DONE Data design behind view
 ** Future
 *** Get input from wechat and dealmoon
 *** Sync data with csv on oneDrive

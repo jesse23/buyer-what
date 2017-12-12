@@ -86,3 +86,6 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+
+// Unset green bottom line for input-has-value
+$text-input-md-highlight-color-valid: none;
