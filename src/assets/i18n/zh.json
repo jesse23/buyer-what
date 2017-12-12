@@ -14,5 +14,9 @@
 
   "PURCHASE": "买货",
   "SHIPPING": "发货",
+
+  "ACCOUNT": "账户",
+  "TOTAL": "总额",
+
   "ABOUT": "关于"
 }

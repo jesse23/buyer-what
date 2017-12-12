@@ -3,11 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { AboutPage } from '../pages/about/about';
+import { AccountPage } from '../pages/account/account';
 import { ShippingPage } from '../pages/shipping/shipping';
 import { OrderPage } from '../pages/order/order';
 import { OrderEditPage } from '../pages/order/orderEdit';
-import { ContactPage } from '../pages/contact/contact';
+import { PurchasePage } from '../pages/purchase/purchase';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -25,9 +25,9 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
+    AccountPage,
     ShippingPage,
-    ContactPage,
+    PurchasePage,
     OrderPage,
     OrderEditPage,
     TabsPage
@@ -47,8 +47,8 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
-    ContactPage,
+    AccountPage,
+    PurchasePage,
     ShippingPage,
     OrderPage,
     OrderEditPage,

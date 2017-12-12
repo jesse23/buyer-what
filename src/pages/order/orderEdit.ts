@@ -9,22 +9,20 @@ import { Utils, Item } from '../../app/utils';
 export class OrderEditPage {
 
   item: Item;
-  index: number;
+  isNew: boolean;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public utils: Utils ) {
     this.item = navParams.get('item');
-    this.index = navParams.get('index');
     if ( !this.item ){
       this.item = Item.createItem();
-      this.index = -1;
+      this.isNew = true;
     }
   }
   
   createOrder() {
-    if ( this.index === -1 ) {
+    if ( this.isNew ) {
       this.utils.itemList.push(this.item);
     } else {
-      this.utils.itemList[this.index] = this.item;
     }
     this.navCtrl.pop();
   }

@@ -14,5 +14,9 @@
 
   "PURCHASE": "Purchase",
   "SHIPPING": "Shipping",
+
+  "ACCOUNT": "Account",
+  "TOTAL": "Total",
+
   "ABOUT": "About"
 }

@@ -27,6 +27,7 @@
     "@ionic/storage": "2.1.3",
     "@ngx-translate/core": "9.0.1",
     "@ngx-translate/http-loader": "2.0.0",
+    "@types/lodash": "4.14.88",
     "android-versions": "latest",
     "cordova-plugin-device": "^1.1.4",
     "cordova-plugin-ionic-webview": "^1.1.16",

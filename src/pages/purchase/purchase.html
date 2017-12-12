@@ -1,15 +1,14 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>{{'SHIPPING' | translate}}</ion-title>
+    <ion-title>{{'PURCHASE' | translate}}</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
   <ion-list no-lines>
-    <ion-item *ngFor="let item of utils.getShippingList()">
+    <ion-item *ngFor="let item of utils.getPurchaseList()">
       <ion-label>{{item.name}} - {{item.owner}}</ion-label>
-      <ion-checkbox [(ngModel)]="item.shipped"></ion-checkbox>
+      <ion-checkbox [(ngModel)]="item.purchased"></ion-checkbox>
     </ion-item>
   </ion-list>
 </ion-content>
-

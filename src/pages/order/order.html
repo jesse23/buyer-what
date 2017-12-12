@@ -11,9 +11,9 @@
 
 <ion-content >
 <ion-list no-lines>
-  <button ion-item *ngFor="let item of utils.itemList; let i = index" [navPush]="pushPage" [navParams]="{item:item,index:i}">
+  <button ion-item *ngFor="let item of utils.getPurchaseList()" [navPush]="pushPage" [navParams]="{item:item}">
     <ion-icon name="leaf" item-start></ion-icon>
-    <ion-label>{{item.name}}</ion-label>
+    <ion-label>{{item.name}} - {{item.owner}}</ion-label>
   </button>
 </ion-list>
 </ion-content>

@@ -3,13 +3,13 @@ import { NavController } from 'ionic-angular';
 import { Utils } from '../../app/utils';
 
 @Component({
-  selector: 'page-shipping',
-  templateUrl: 'shipping.html'
+  selector: 'page-purchase',
+  templateUrl: 'purchase.html'
 })
-export class ShippingPage {
+export class PurchasePage {
+
 
   constructor(public navCtrl: NavController, public utils: Utils) {
-
   }
 
 }
