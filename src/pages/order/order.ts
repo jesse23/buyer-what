@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { NewOrderPage } from './newOrder';
+import { OrderEditPage } from './orderEdit';
 import { Utils } from '../../app/utils';
 
 @Component({
@@ -9,14 +9,10 @@ import { Utils } from '../../app/utils';
 })
 export class OrderPage {
 
-  items = this.utils.itemList;
+  pushPage: any;
   
   constructor(public navCtrl: NavController, public utils: Utils ) {
+    this.pushPage = OrderEditPage;
     utils.loadTestFile();
   }
-
-  push() {
-    this.navCtrl.push(NewOrderPage);
-  }
-
 }

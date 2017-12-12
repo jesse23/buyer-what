@@ -1,18 +1,19 @@
 // import { File } from '@ionic-native/file';
 
 export class Item {
-  public name : string;
+  name : string;
   owner : string;
   paid : boolean;
   cost : number;
   price : number;
 
-  static createItem ( name: string, 
-                      owner: string, 
-                      paid: boolean, 
-                      cost: number, 
-                      price: number ): Item {
+  private constructor() {};
 
+  static createItem ( name:  string  = '', 
+                      owner: string  = '', 
+                      paid:  boolean = false, 
+                      cost:  number  = null, 
+                      price: number  = null ): Item {
     let item = new Item();
     item.name = name;
     item.owner = owner;

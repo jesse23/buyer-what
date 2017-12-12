@@ -2,9 +2,16 @@
   "POST": "发款",
 
   "ORDER": "订单",
+
   "NEW ORDER": "新订单",
-  "CREATE ORDER": "创建订单",
+  "EDIT ORDER": "编辑订单",
+  "ORDER NAME": "品名",
+  "ORDER OWNER": "客户",
+  "ORDER COST": "原价",
+  "ORDER PRICE": "报价",
   "PAID": "已付?",
+  "OK": "确定",
+
   "PURCHASE": "买货",
   "SHIPPING": "发货",
   "ABOUT": "关于"

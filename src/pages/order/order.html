@@ -2,7 +2,7 @@
   <ion-navbar>
     <ion-title>{{'ORDER' | translate}}</ion-title>
     <ion-buttons end>
-      <button ion-button icon-only (click)="push()">
+      <button ion-button icon-only [navPush]="pushPage">
         <ion-icon name="add"></ion-icon>
       </button>
 </ion-buttons>
@@ -11,7 +11,7 @@
 
 <ion-content >
 <ion-list no-lines>
-  <button ion-item *ngFor="let item of items">
+  <button ion-item *ngFor="let item of utils.itemList; let i = index" [navPush]="pushPage" [navParams]="{item:item,index:i}">
     <ion-icon name="leaf" item-start></ion-icon>
     <ion-label>{{item.name}}</ion-label>
   </button>

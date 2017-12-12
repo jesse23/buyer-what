@@ -2,9 +2,15 @@
   "POST": "Post",
 
   "ORDER": "Order",
+
   "NEW ORDER": "New Order",
-  "CREATE ORDER": "Create Order",
+  "EDIT ORDER": "Edit Order",
+  "ORDER NAME": "What",
+  "ORDER OWNER": "Who",
+  "ORDER COST": "Cost",
+  "ORDER PRICE": "Price",
   "PAID": "Paid?",
+  "OK": "OK",
 
   "PURCHASE": "Purchase",
   "SHIPPING": "Shipping",

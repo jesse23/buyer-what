@@ -6,7 +6,7 @@ import { MyApp } from './app.component';
 import { AboutPage } from '../pages/about/about';
 import { ShippingPage } from '../pages/shipping/shipping';
 import { OrderPage } from '../pages/order/order';
-import { NewOrderPage } from '../pages/order/newOrder';
+import { OrderEditPage } from '../pages/order/orderEdit';
 import { ContactPage } from '../pages/contact/contact';
 import { TabsPage } from '../pages/tabs/tabs';
 
@@ -29,7 +29,7 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
     ShippingPage,
     ContactPage,
     OrderPage,
-    NewOrderPage,
+    OrderEditPage,
     TabsPage
   ],
   imports: [
@@ -51,7 +51,7 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
     ContactPage,
     ShippingPage,
     OrderPage,
-    NewOrderPage,
+    OrderEditPage,
     TabsPage
   ],
   providers: [
