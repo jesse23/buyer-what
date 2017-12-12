@@ -12,6 +12,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { Utils } from './utils';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -56,6 +57,7 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
   providers: [
     StatusBar,
     SplashScreen,
+    Utils,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

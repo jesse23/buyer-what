@@ -42,9 +42,8 @@
      Who:  John Snow
      Paid: Yes/No
      Brand: Apple
-     Origin Price: $160
+     (Origin Price: $160)
      List Price: $200
-     Count: 2
 *** TODO Table data structure behind the tab view
 ** Future
 *** Get input from wechat and dealmoon
