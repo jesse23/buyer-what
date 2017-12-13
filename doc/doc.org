@@ -1,3 +1,4 @@
+#+TODO: TODO WAIT | DONE CANCEL
 * Buyers
   https://gitlab.com/jesse23/buyer-what
 #+BEGIN_SRC sh
@@ -5,46 +6,34 @@
 #+END_SRC
 ** Home Test IP 
    http://192.168.1.114:8100
-** Task List
-*** DONE Setup a Tab Example Project
-*** DONE Bootstrap with gitlab and local batch
-*** DONE i18n framework ( zh and en )
-**** DONE Make i18N work
-**** DONE Make i18N setting globally
-*** DONE basic 4 tabs: Order, Buy, Ship
-*** DONE Workflow
-    Post -> Order -> (Payment) -> Purchase -> Shipping
-
-    1. One post may got to multiple order.
-    2. One purchase can do multiple order together.
-    3. Purchase and order maybe dynamic and changable.
-**** Post ( In wechat )
-     What: Apple airpods
-     Brand: Apple
-     Origin Price: $160
-     List Price: $200
-     Expire Date: Next Monday
-**** Order
-     Who:  John Snow
-     Count: 2
-     ( When: Thursday )
-**** Purchase
-     Where: Somerset Apple Stroe
-     When:  Sunday
-**** Shipping
-     Shipping Type:  A ( $2/LB, 2LB )
-     Shipping Name: John Snow Jr
-     Shipping Address: 4763 Holland Dr, Troy MI, 48085
-     When:  Next Tuestday
-     Checking: every week after next Tuesday
-*** DONE New Order Page design
-     What: Apple airpods
-     Who:  John Snow
-     Paid: Yes/No
-     Brand: Apple
-     (Origin Price: $160)
-     List Price: $200
-*** DONE Data design behind view
+** Spint 2 - focus on purchase and ship page 
+*** Design
+**** Order Page
+     1. Cost is not needed in this page.
+     2. Name here is alias or wechat name.
+**** Purchase Page
+     1. Show/Modify cost attribute here.
+     2. Group list by location for filtering.
+**** Shipping Page
+     1. Add shippment fee with a rough calculator, re-bundle helper.
+     2. Shipment type like "IT", "Clothes", "Shoes"
+     3. Contact sub page:
+        1) Real name
+        2) Phone
+        3) Address
+        4) National Identity Number
+     4. Ship tracking number and shipping carrier.
+     5. Add auto assign ID for tracing with package in delivery location.
+     6. Group by Type, city, contact for filtering and re-bundle.
+**** Acount Page
+     1. Show/Modify cost attribute here
+     2. Concurrency change practice in account:
+        1) Original price in US Dollar.
+        2) Shipment in CHN.
+        3) Total in CHN.
+        4) Better to have a preference to set it up.
+*** Task list
+**** TODO Extra feedback from sprint review, prioritize requirements
 ** Future
 *** Get input from wechat and dealmoon
 *** Sync data with csv on oneDrive
@@ -57,7 +46,7 @@ What I did was download Android Studio. Then I updated the SDK version using the
 
 After updating, I created a new dummy android project (empty activity). After the project was created, the TODO console gave me the option to download the missing sdk components. There I was prompted with the ‘Accept licence’ popup. After accepting, I was able to build my ionic project without this error.
 #+END_SRC
-** Android
+*** Android
    1. Install Android SDK
    2. Install SDK 24 and proper Image ( ATOM_x64 on windows )
    3. Set ANDROID_HOME correctly.

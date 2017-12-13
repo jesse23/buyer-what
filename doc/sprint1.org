@@ -1,0 +1,62 @@
+#+TODO: TODO WAIT | DONE CANCEL
+** Spint 1 - bootstrap
+*** Task List
+**** DONE Setup a Tab Example Project
+**** DONE Bootstrap with gitlab and local batch
+**** DONE i18n framework ( zh and en )
+***** DONE Make i18N work
+***** DONE Make i18N setting globally
+**** DONE basic 4 tabs: Order, Buy, Ship
+**** DONE Workflow
+    Post -> Order -> (Payment) -> Purchase -> Shipping
+
+    1. One post may got to multiple order.
+    2. One purchase can do multiple order together.
+    3. Purchase and order maybe dynamic and changable.
+***** Post ( In wechat )
+     What: Apple airpods
+     Brand: Apple
+     Origin Price: $160
+     List Price: $200
+     Expire Date: Next Monday
+***** Order
+     Who:  John Snow
+     Count: 2
+     ( When: Thursday )
+***** Purchase
+     Where: Somerset Apple Stroe
+     When:  Sunday
+***** Shipping
+     Shipping Type:  A ( $2/LB, 2LB )
+     Shipping Name: John Snow Jr
+     Shipping Address: 4763 Holland Dr, Troy MI, 48085
+     When:  Next Tuestday
+     Checking: every week after next Tuesday
+**** DONE New Order Page design
+     What: Apple airpods
+     Who:  John Snow
+     Paid: Yes/No
+     Brand: Apple
+     (Origin Price: $160)
+     List Price: $200
+**** DONE Data design behind view
+**** DONE 1st Sprint Review
+    1. No cost needed when order page.
+    2. Put cost in account page.
+    3. Shipment fee is needed.
+    4. Add contact page for: (sub page of shipment)
+       1) Real Name
+       2) Phone
+       3) Address
+       4) Id number
+    5. Add ship tracking number to Item.
+    6. Wechat name in order page.
+    7. In shipment page, add No. as ID in UI ( auto allocation at first )
+    8. Helper for evaluate Shipment fee for package re-assignment.
+    9. Concurrency change for fee in account.
+       1) Original price in US Dollar.
+       2) Shipment fee in CHN Yuan.
+       3) Total in CHN.
+  10. Purchase place at order page or purchase page, group location for filtering.
+  11. Shipping page: Group by Type, and City, contact.
+  12. Focus on purchanse and shipping page for next sprint.
