@@ -1,4 +1,3 @@
-// import { File } from '@ionic-native/file';
 import _ from "lodash";
 
 export class Item {
@@ -34,8 +33,11 @@ export class Item {
 }
 
 export class Utils {
-  // constructor(private file: File) {}
   public itemList: Item[] = [];
+
+  /*constructor(public file: File) {
+  };*/
+
 
   constructor() {
   };
@@ -46,6 +48,7 @@ export class Utils {
     this.itemList.push(Item.createItem('ipad','Larry',350,400, false));
   }
 
+  // Reader
   getShippingList() : Item[] {
     return _.filter(this.itemList, { purchased: true});
   }

@@ -33,7 +33,9 @@
         3) Total in CHN.
         4) Better to have a preference to set it up.
 *** Task list
-**** TODO Extra feedback from sprint review, prioritize requirements
+**** DONE Extra feedback from sprint review, prioritize requirements
+**** TODO Persistent list
+**** TODO Remove test items
 ** Future
 *** Get input from wechat and dealmoon
 *** Sync data with csv on oneDrive
