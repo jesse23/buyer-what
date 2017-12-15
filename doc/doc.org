@@ -34,11 +34,14 @@
         4) Better to have a preference to set it up.
 *** Task list
 **** DONE Extra feedback from sprint review, prioritize requirements
-**** TODO Persistent list
-**** TODO Remove test items
+**** DONE Persistent list
+**** DONE Issue: Cannot use Storage or Native File inside provider
+**** TODO Dummy function for test purpose
+**** TODO Delete list
 ** Future
 *** Get input from wechat and dealmoon
 *** Sync data with csv on oneDrive
+*** Remove test items
 ** Trouble shoot
 *** You have not accepted the license… Android SDK Platform 26
 #+BEGIN_SRC

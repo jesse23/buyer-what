@@ -1,4 +1,7 @@
 import _ from "lodash";
+import { Storage } from '@ionic/storage';
+import { Platform, ToastController } from 'ionic-angular';
+import { Inject, forwardRef } from '@angular/core';
 
 export class Item {
   name : string;
@@ -35,17 +38,33 @@ export class Item {
 export class Utils {
   public itemList: Item[] = [];
 
-  /*constructor(public file: File) {
-  };*/
+  constructor( @Inject(forwardRef(() => Storage))  private storage: Storage,
+               @Inject(forwardRef(() => Platform)) private platform: Platform,
+               @Inject(forwardRef(() => ToastController)) private toastCtrl: ToastController ) { 
+  }
 
+  load() {
+    this.storage.get('items').then((val) => {
+      if ( val ){
+        this.itemList = val;
+      } else {
+        this.itemList.push(Item.createItem('airpods','Jesse',160,200, false));
+        this.itemList.push(Item.createItem('iphoneX','Lucy',1150,1200, false));
+        this.itemList.push(Item.createItem('ipad','Larry',350,400, false));
+      }
+    });
 
-  constructor() {
-  };
+    this.platform.pause.subscribe(e => {
+      return this.save();
+    });
 
-  loadTestFile(){
-    this.itemList.push(Item.createItem('airpods','Jesse',160,200, false));
-    this.itemList.push(Item.createItem('iphoneX','Lucy',1150,1200, false));
-    this.itemList.push(Item.createItem('ipad','Larry',350,400, false));
+    window.addEventListener('beforeunload', () => {
+      return this.save();
+    });
+  }
+
+  save() : Promise<any> {
+    return this.storage.set('items', this.itemList);
   }
 
   // Reader
@@ -69,6 +88,15 @@ export class Utils {
     return _.reduce(this.itemList, function( sum, o): number{
       return sum + (o.paid?( o.price - o.cost ):0);
     }, 0 );
+  }
+
+  // Test Helper
+  popMsg( info : any ) {
+    let toast = this.toastCtrl.create({
+      message: info,
+      duration: 3000
+    });
+    toast.present();
   }
   
 }

@@ -10,7 +10,7 @@ import { OrderEditPage } from '../pages/order/orderEdit';
 import { PurchasePage } from '../pages/purchase/purchase';
 import { TabsPage } from '../pages/tabs/tabs';
 
-import { File } from '@ionic-native/file';
+import { IonicStorageModule } from '@ionic/storage';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Utils } from './utils';
@@ -43,6 +43,7 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
         deps: [HttpClient]
       }
     }),
+    IonicStorageModule.forRoot(),
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -56,11 +57,13 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
     TabsPage
   ],
   providers: [
-    File,
     StatusBar,
     SplashScreen,
     Utils,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { 
+      provide: ErrorHandler, 
+      useClass: IonicErrorHandler
+    },
   ]
 })
 export class AppModule {}
