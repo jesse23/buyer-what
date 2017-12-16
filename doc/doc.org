@@ -36,8 +36,8 @@
 **** DONE Extra feedback from sprint review, prioritize requirements
 **** DONE Persistent list
 **** DONE Issue: Cannot use Storage or Native File inside provider
-**** TODO Dummy function for test purpose
-**** TODO Delete list
+**** DONE Dummy function for test purpose
+**** DONE Delete list
 ** Future
 *** Get input from wechat and dealmoon
 *** Sync data with csv on oneDrive
@@ -57,3 +57,12 @@ After updating, I created a new dummy android project (empty activity). After th
    3. Set ANDROID_HOME correctly.
    4. ionic cordova emulate android
    5. ionic cordova run android --prod --release
+*** IOS
+ionic cordova emulate ios
+**** Switch developer directory
+xcode-select --install # Install Command Line Tools if you haven't already.
+sudo xcode-select --switch /Library/Developer/CommandLineTools # Enable command line tools
+sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+**** Deploy
+https://ionicframework.com/docs/intro/deploying/
+https://stackoverflow.com/questions/39603667/failed-to-create-provisioning-profile --> Bundle Identifier
