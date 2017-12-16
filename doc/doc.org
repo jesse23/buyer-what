@@ -38,6 +38,7 @@
 **** DONE Issue: Cannot use Storage or Native File inside provider
 **** DONE Dummy function for test purpose
 **** DONE Delete list
+**** DONE Emulate and Deploy on ios
 ** Future
 *** Get input from wechat and dealmoon
 *** Sync data with csv on oneDrive
