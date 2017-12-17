@@ -9,11 +9,12 @@
 ** Spint 2 - focus on purchase and ship page 
 *** Design
 **** Order Page
-     1. Cost is not needed in this page.
-     2. Name here is alias or wechat name.
+***** DONE Cost is not needed in this page.
+***** DONE Name here is alias or wechat name.
 **** Purchase Page
-     1. Show/Modify cost attribute here.
-     2. Group list by location for filtering.
+***** DONE Show/Modify cost attribute here.
+***** DONE Group list by location and owner.
+***** TODO Use card/title/list to make view nicer.
 **** Shipping Page
      1. Add shippment fee with a rough calculator, re-bundle helper.
      2. Shipment type like "IT", "Clothes", "Shoes"
@@ -32,13 +33,13 @@
         2) Shipment in CHN.
         3) Total in CHN.
         4) Better to have a preference to set it up.
-*** Task list
-**** DONE Extra feedback from sprint review, prioritize requirements
-**** DONE Persistent list
-**** DONE Issue: Cannot use Storage or Native File inside provider
-**** DONE Dummy function for test purpose
-**** DONE Delete list
-**** DONE Emulate and Deploy on ios
+**** Task list
+***** DONE Extra feedback from sprint review, prioritize requirements
+***** DONE Persistent list
+***** DONE Issue: Cannot use Storage or Native File inside provider
+***** DONE Dummy function for test purpose
+***** DONE Delete list
+***** DONE Emulate and Deploy on ios
 ** Future
 *** Get input from wechat and dealmoon
 *** Sync data with csv on oneDrive

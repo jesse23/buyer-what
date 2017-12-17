@@ -9,6 +9,7 @@ import { Utils, Item } from '../../app/utils';
 export class OrderEditPage {
 
   item: Item;
+  showCost: boolean;
   isNew: boolean;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public utils: Utils ) {
@@ -17,6 +18,7 @@ export class OrderEditPage {
       this.item = Item.createItem();
       this.isNew = true;
     }
+    this.showCost = navParams.get('showCost');
   }
   
   createOrder() {

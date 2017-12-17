@@ -9,7 +9,7 @@
 <ion-content>
   <ion-card>
   <ion-list>
-    <button ion-item *ngFor="let item of utils.itemList" [navPush]="pushPage" [navParams]="{item:item}">
+    <button ion-item *ngFor="let item of utils.itemList" [navPush]="pushPage" [navParams]="{item:item,showCost:true}">
       <ion-label>{{item.name}} - {{item.owner}}</ion-label>
       <ion-badge item-end [color]="(item.paid &amp;&amp; (item.price - item.cost ) > 0)? 'primary':'danger'">{{item.price - item.cost}}</ion-badge>
     </button>

@@ -5,9 +5,16 @@
 </ion-header>
 
 <ion-content>
+ <ion-item>
+  <ion-label>Group by</ion-label>
+  <ion-select interface="popover" [(ngModel)]="groupBy">
+    <ion-option value="location">Order Location</ion-option>
+    <ion-option value="owner">Order Owner</ion-option>
+  </ion-select>
+  </ion-item>
   <ion-list no-lines>
-    <ion-item *ngFor="let item of utils.getPurchaseList()">
-      <ion-label>{{item.name}} - {{item.owner}}</ion-label>
+    <ion-item *ngFor="let item of getList()">
+      <ion-label>{{item.name}}/{{item.owner}}/{{item.location}}</ion-label>
       <ion-checkbox [(ngModel)]="item.purchased"></ion-checkbox>
     </ion-item>
   </ion-list>

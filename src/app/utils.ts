@@ -6,6 +6,7 @@ import { Inject, forwardRef } from '@angular/core';
 export class Item {
   name : string;
   owner : string;
+  location: string;
   cost : number;
   price : number;
 
@@ -17,6 +18,7 @@ export class Item {
 
   static createItem ( name:       string  = '', 
                       owner:      string  = '', 
+                      location:   string  = '',
                       cost:       number  = null, 
                       price:      number  = null,
                       paid:       boolean = false, 
@@ -26,6 +28,7 @@ export class Item {
     let item = new Item();
     item.name = name;
     item.owner = owner;
+    item.location = location;
     item.cost = cost;
     item.price = price;
     item.paid = paid;
@@ -48,9 +51,9 @@ export class Utils {
       if ( val ){
         this.itemList = val;
       } else {
-        this.itemList.push(Item.createItem('airpods','Jesse',160,200, false));
-        this.itemList.push(Item.createItem('iphoneX','Lucy',1150,1200, false));
-        this.itemList.push(Item.createItem('ipad','Larry',350,400, false));
+        this.itemList.push(Item.createItem('airpods','Jesse','Somerset',160,200, false));
+        this.itemList.push(Item.createItem('iphoneX','Lucy','Somerset',1150,1200, false));
+        this.itemList.push(Item.createItem('ipad','Larry','Amazon',350,400, false));
       }
     });
 
