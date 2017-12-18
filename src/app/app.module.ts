@@ -8,6 +8,7 @@ import { ShippingPage } from '../pages/shipping/shipping';
 import { OrderPage } from '../pages/order/order';
 import { OrderEditPage } from '../pages/order/orderEdit';
 import { PurchasePage } from '../pages/purchase/purchase';
+import { PurchasePopPage } from '../pages/purchase/purchasePop';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { IonicStorageModule } from '@ionic/storage';
@@ -31,6 +32,7 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
     PurchasePage,
     OrderPage,
     OrderEditPage,
+    PurchasePopPage,
     TabsPage
   ],
   imports: [
@@ -54,6 +56,7 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
     ShippingPage,
     OrderPage,
     OrderEditPage,
+    PurchasePopPage,
     TabsPage
   ],
   providers: [

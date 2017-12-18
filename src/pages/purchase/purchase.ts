@@ -1,7 +1,8 @@
 import _ from "lodash";
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, PopoverController } from 'ionic-angular';
 import { Item, Utils } from '../../app/utils';
+import { PurchasePopPage } from './purchasePop';
 
 @Component({
   selector: 'page-purchase',
@@ -10,21 +11,37 @@ import { Item, Utils } from '../../app/utils';
 export class PurchasePage {
 
   groupBy: string;
-  testList: Item[][];
+  rawList: Item[];
+  listGroup: Item[][];
 
-  constructor(public navCtrl: NavController, public utils: Utils) {
-    this.groupBy = "owner";
+  constructor(public navCtrl: NavController, private popoverCtrl: PopoverController, public utils: Utils) {
+    this.groupBy = "location";
   }
 
   ionViewDidEnter(){
-    this.testList = this.getList();
+    this.listGroup = this.getListGroup(true);
   }
 
-  getList() : Item[][]{
-    var a = _.filter(this.utils.itemList, { shipped: false});
-    var b = _.groupBy(a, this.groupBy );
-    var c = _.values(b);
-    return c;
+  getListGroup(updateRawList: boolean) : Item[][]{
+    if ( updateRawList ){
+      this.rawList = _.filter(this.utils.itemList, { shipped: false});
+    }
+    return _.values(_.groupBy(this.rawList, this.groupBy ));
   }
+
+  presentRadioPopover(ev: UIEvent) {
+    let popover = this.popoverCtrl.create(PurchasePopPage, {
+      val: this.groupBy
+    });
+
+    popover.present({
+      ev: ev
+    });
+
+    popover.onDidDismiss(data => {
+      this.groupBy = data;
+      this.listGroup = this.getListGroup(false);
+    });
+}
 
 }

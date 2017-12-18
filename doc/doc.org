@@ -14,18 +14,18 @@
 **** Purchase Page
 ***** DONE Show/Modify cost attribute here.
 ***** DONE Group list by location and owner.
-***** TODO Use card/title/list to make view nicer.
+***** DONE Use card/title/list to make view nicer.
 **** Shipping Page
-     1. Add shippment fee with a rough calculator, re-bundle helper.
-     2. Shipment type like "IT", "Clothes", "Shoes"
-     3. Contact sub page:
-        1) Real name
-        2) Phone
-        3) Address
-        4) National Identity Number
-     4. Ship tracking number and shipping carrier.
-     5. Add auto assign ID for tracing with package in delivery location.
-     6. Group by Type, city, contact for filtering and re-bundle.
+***** TODO Ship tracking number, Shipping type, weight and shipping carrier.
+***** TODO Contact info:
+      1) Real name
+      2) Phone
+      3) Address
+      4) National Identity Number
+***** TODO Group by owner, city, carrier, type, tracking number.
+***** Pending
+      1. Add shippment fee with a rough calculator, re-bundle helper.
+      5. Add auto assign ID for tracing with package in delivery location.
 **** Acount Page
      1. Show/Modify cost attribute here
      2. Concurrency change practice in account:

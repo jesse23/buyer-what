@@ -5,15 +5,14 @@
       <button ion-button icon-only [navPush]="pushPage" [navParams]="{showCost:false}">
         <ion-icon name="add"></ion-icon>
       </button>
-</ion-buttons>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content >
-
-  <ion-list no-lines>
+  <ion-list>
     <ion-item-sliding *ngFor="let item of utils.itemList; let i = index">
-      <button ion-item [navPush]="pushPage" [navParams]="{item:item,showCost:false}">
+      <button ion-item detail-none [navPush]="pushPage" [navParams]="{item:item,showCost:false}">
         <ion-icon name="leaf" item-start></ion-icon>
         <ion-label>{{item.name}}/{{item.owner}}</ion-label>
       </button>
@@ -23,8 +22,5 @@
           </button>
       </ion-item-options>
     </ion-item-sliding>
-
   </ion-list>
-
- 
 </ion-content>

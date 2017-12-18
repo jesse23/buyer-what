@@ -40,6 +40,7 @@ export class Item {
 
 export class Utils {
   public itemList: Item[] = [];
+  public groupBy: string;
 
   constructor( @Inject(forwardRef(() => Storage))  private storage: Storage,
                @Inject(forwardRef(() => Platform)) private platform: Platform,

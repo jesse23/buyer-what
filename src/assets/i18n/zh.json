@@ -13,7 +13,10 @@
   "PAID": "已付?",
   "OK": "确定",
 
-  "PURCHASE": "买货",
+  "PURCHASE": "备货",
+  "GROUP BY": "分组",
+
+
   "SHIPPING": "发货",
 
   "ACCOUNT": "账户",

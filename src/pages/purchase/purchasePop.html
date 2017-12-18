@@ -1,0 +1,13 @@
+<ion-list radio-group [(ngModel)]="val">
+  <ion-list-header>
+    {{'GROUP BY' | translate}}
+  </ion-list-header>
+  <ion-item>
+    <ion-label>{{'ORDER LOCATION' | translate}}</ion-label>
+    <ion-radio (click)="close(val)" value="location"></ion-radio>
+  </ion-item>
+  <ion-item>
+    <ion-label>{{'ORDER OWNER' | translate}}</ion-label>
+    <ion-radio (click)="close(val)" value="owner"></ion-radio>
+  </ion-item>
+</ion-list>
