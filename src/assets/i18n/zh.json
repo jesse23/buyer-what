@@ -14,10 +14,13 @@
   "OK": "确定",
 
   "PURCHASE": "备货",
+  "PURCHASED": "已买?",
   "GROUP BY": "分组",
 
-
   "SHIPPING": "发货",
+  "SHIPPED": "已发货",
+  "SHIPMENT CARRIER": "快递公司",
+  "SHIPMENT CHECKING NUMBER": "快递单号",
 
   "ACCOUNT": "账户",
   "TOTAL": "总额",

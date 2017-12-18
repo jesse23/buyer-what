@@ -5,6 +5,8 @@ import { MyApp } from './app.component';
 
 import { AccountPage } from '../pages/account/account';
 import { ShippingPage } from '../pages/shipping/shipping';
+import { ShippingEditPage } from '../pages/shipping/shippingEdit';
+import { ShippingPopPage } from '../pages/shipping/shippingPop';
 import { OrderPage } from '../pages/order/order';
 import { OrderEditPage } from '../pages/order/orderEdit';
 import { PurchasePage } from '../pages/purchase/purchase';
@@ -13,6 +15,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { IonicStorageModule } from '@ionic/storage';
 import { StatusBar } from '@ionic-native/status-bar';
+import { Clipboard } from '@ionic-native/clipboard';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Utils } from './utils';
 
@@ -29,6 +32,8 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
     MyApp,
     AccountPage,
     ShippingPage,
+    ShippingEditPage,
+    ShippingPopPage,
     PurchasePage,
     OrderPage,
     OrderEditPage,
@@ -54,12 +59,15 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
     AccountPage,
     PurchasePage,
     ShippingPage,
+    ShippingEditPage,
+    ShippingPopPage,
     OrderPage,
     OrderEditPage,
     PurchasePopPage,
     TabsPage
   ],
   providers: [
+    Clipboard,
     StatusBar,
     SplashScreen,
     Utils,

@@ -14,9 +14,13 @@
   "OK": "OK",
 
   "PURCHASE": "Purchase",
+  "PURCHASED": "Purchased?",
   "GROUP BY": "Group By",
 
   "SHIPPING": "Shipping",
+  "SHIPPED": "Shipped",
+  "SHIPMENT CARRIER": "Shipping Carrier",
+  "SHIPMENT CHECKING NUMBER": "Tracking Number",
 
   "ACCOUNT": "Account",
   "TOTAL": "Total",

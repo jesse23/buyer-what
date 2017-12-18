@@ -12,7 +12,9 @@ export class Item {
 
   paid : boolean;
   purchased: boolean;
-  shipped: boolean;
+
+  carrier: string;
+  trackNo: string;
 
   private constructor() {};
 
@@ -23,7 +25,8 @@ export class Item {
                       price:      number  = null,
                       paid:       boolean = false, 
                       purchased:  boolean = false, 
-                      shipped:    boolean = false 
+                      carrier:    string  = '',
+                      trackNo:    string  = ''
                     ): Item {
     let item = new Item();
     item.name = name;
@@ -33,7 +36,8 @@ export class Item {
     item.price = price;
     item.paid = paid;
     item.purchased = purchased;
-    item.shipped = shipped;
+    item.carrier = carrier;
+    item.trackNo = trackNo;
     return item;
   }
 }
@@ -50,6 +54,9 @@ export class Utils {
   load() {
     this.storage.get('items').then((val) => {
       if ( val ){
+        // HC for trackNo
+        _.map(val, (o:Item) => {if(!o.carrier){o.carrier=''}});
+        _.map(val, (o:Item) => {if(!o.trackNo){o.trackNo=''}});
         this.itemList = val;
       } else {
         this.itemList.push(Item.createItem('airpods','Jesse','Somerset',160,200, false));
@@ -77,7 +84,7 @@ export class Utils {
   }
 
   getPurchaseList() : Item[] {
-    return _.filter(this.itemList, { shipped: false});
+    return _.filter(this.itemList, (o:Item):boolean => {return o.trackNo.length>0});
   }
 
   getUnPurchasedCount() : number {
@@ -85,7 +92,7 @@ export class Utils {
   }
 
   getUnShippedCount() : number {
-    return _.filter(this.itemList, { purchased: true, shipped: false }).length;
+    return _.filter(this.itemList, (o:Item):boolean => {return o.purchased && (o.trackNo.length==0)}).length;
   }
 
   getTotalAmount() : number {

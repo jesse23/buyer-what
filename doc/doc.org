@@ -6,6 +6,7 @@
 #+END_SRC
 ** Home Test IP 
    http://192.168.1.114:8100
+   http://localhost:8100/?ionicplatform=ios
 ** Spint 2 - focus on purchase and ship page 
 *** Design
 **** Order Page
@@ -16,14 +17,15 @@
 ***** DONE Group list by location and owner.
 ***** DONE Use card/title/list to make view nicer.
 **** Shipping Page
-***** TODO Ship tracking number, Shipping type, weight and shipping carrier.
+***** TODO Ship tracking number, Shipping weight and shipping carrier.
 ***** TODO Contact info:
       1) Real name
       2) Phone
       3) Address
       4) National Identity Number
-***** TODO Group by owner, city, carrier, type, tracking number.
+***** TODO Group by owner, city, carrier, tracking number.
 ***** Pending
+      1. Shipment type, price per pound, weight.
       1. Add shippment fee with a rough calculator, re-bundle helper.
       5. Add auto assign ID for tracing with package in delivery location.
 **** Acount Page

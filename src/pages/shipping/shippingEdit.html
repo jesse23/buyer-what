@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{(isNew?'NEW ORDER':'EDIT ORDER') | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      Basic Info
+    </ion-list-header>
+    <ion-item>{{item.name}}</ion-item>
+    <ion-item>{{item.owner}}</ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-list-header>
+      Shipping Info
+    </ion-list-header>
+    <ion-item>
+      <ion-input placeholder="{{'SHIPMENT CARRIER' | translate}}" type="text" [(ngModel)]="item.carrier"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="{{'SHIPMENT CHECKING NUMBER' | translate}}" type="text" [(ngModel)]="item.trackNo"></ion-input>
+    </ion-item>
+  </ion-list>
+
+<!--
+  <ion-item-group>
+    <ion-item-divider color="light">Basic Info</ion-item-divider>
+
+
+    <ion-item-divider color="light">Shipping Info</ion-item-divider>
+    <ion-item>
+      <ion-input placeholder="{{'SHIPMENT CARRIER' | translate}}" type="text" [(ngModel)]="item.carrier"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="{{'SHIPMENT CHECKING NUMBER' | translate}}" type="text" [(ngModel)]="item.trackNo"></ion-input>
+    </ion-item>
+
+  </ion-item-group>
+-->
+  <button ion-button full (click)="createOrder()" [disabled]="!item.name">
+    {{'OK' | translate}}
+  </button>
+
+
+<!--
+  <ion-list>
+    <ion-item>
+      <ion-input placeholder="{{'ORDER NAME' | translate}}" type="text" [(ngModel)]="item.name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="{{'ORDER OWNER' | translate}}" type="text" [(ngModel)]="item.owner"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="{{'SHIPMENT CHECKING NUMBER' | translate}}" type="text" [(ngModel)]="item.trackNo"></ion-input>
+    </ion-item>
+    <button ion-button full (click)="createOrder()" [disabled]="!item.name">
+      {{'OK' | translate}}
+    </button>
+  </ion-list>
+-->
+</ion-content>
