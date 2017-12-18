@@ -15,7 +15,7 @@
     <ion-item-sliding *ngFor="let item of utils.itemList; let i = index">
       <button ion-item [navPush]="pushPage" [navParams]="{item:item,showCost:false}">
         <ion-icon name="leaf" item-start></ion-icon>
-        <ion-label>{{item.name}} - {{item.owner}}</ion-label>
+        <ion-label>{{item.name}}/{{item.owner}}</ion-label>
       </button>
       <ion-item-options icon-start (ionSwipe)="utils.itemList.splice(i,1)" side="left">
           <button ion-button expandable color="danger" (click)="utils.itemList.splice(i,1)">
