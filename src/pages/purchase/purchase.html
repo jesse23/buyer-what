@@ -1,41 +1,23 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>{{'PURCHASE' | translate}}</ion-title>
+
+    <ion-title>{{'PURCHASE' | translate}}</ion-titl
   </ion-navbar>
 </ion-header>
 
 <ion-content>
- <ion-item>
-  <ion-label>Group by</ion-label>
-  <ion-select interface="popover" [(ngModel)]="groupBy">
-    <ion-option value="location">Order Location</ion-option>
-    <ion-option value="owner">Order Owner</ion-option>
-  </ion-select>
+  <ion-item>
+    <ion-label>Group by</ion-label>
+    <ion-select interface="popover" [(ngModel)]="groupBy">
+      <ion-option value="location">Order Location</ion-option>
+      <ion-option value="owner">Order Owner</ion-option>
+    </ion-select>
   </ion-item>
-  <!--<ion-list no-lines>
-    <ion-item *ngFor="let item of getList()">
-      <ion-label>{{item.name}}/{{item.owner}}/{{item.location}}</ion-label>
+  <ion-item-group *ngFor="let group of testList">
+    <ion-item-divider color="light">{{group[0][groupBy]}}</ion-item-divider>
+    <ion-item *ngFor="let item of group">
+      <ion-label>{{item.name}}/{{(groupBy === 'owner')?item.location:item.owner}}</ion-label>
       <ion-checkbox [(ngModel)]="item.purchased"></ion-checkbox>
-    </ion-item>-->
-
-  <!--<ion-list>
-    <ion-item *ngFor="let group of getList()">-->
-      <ion-item-group *ngFor="let group of testList">
-          <ion-item-divider color="light">{{group[0][groupBy]}}</ion-item-divider>
-        <!--
-        <ion-list>
-          <button ion-item>
-            <ion-icon name='cart' item-start></ion-icon>
-            {{group[0].name}}
-          </button>
-        </ion-list>
-      -->
-          <ion-item *ngFor="let item of group">
-            <ion-label>{{item.name}}/{{(groupBy === 'owner')?item.location:item.owner}}</ion-label>
-            <ion-checkbox [(ngModel)]="item.purchased"></ion-checkbox>
-          </ion-item>
-      </ion-item-group>
-  <!--  </ion-item>
-
-  </ion-list>-->
+    </ion-item>
+  </ion-item-group>
 </ion-content>
