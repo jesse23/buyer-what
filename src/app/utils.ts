@@ -8,6 +8,7 @@ export class Item {
   owner : string;
   location: string;
   cost : number;
+  shipmentCost : number;
   price : number;
 
   paid : boolean;
@@ -22,6 +23,7 @@ export class Item {
                       owner:      string  = '', 
                       location:   string  = '',
                       cost:       number  = null, 
+                      shipmentCost : number = null,
                       price:      number  = null,
                       paid:       boolean = false, 
                       purchased:  boolean = false, 
@@ -33,6 +35,7 @@ export class Item {
     item.owner = owner;
     item.location = location;
     item.cost = cost;
+    item.shipmentCost = shipmentCost;
     item.price = price;
     item.paid = paid;
     item.purchased = purchased;
@@ -94,9 +97,9 @@ export class Utils {
         _.map(val, (o:Item) => {if(!o.trackNo){o.trackNo=''}});
         this.itemList = val;
       } else {
-        this.itemList.push(Item.createItem('airpods','Jesse','Somerset',160,200, false));
-        this.itemList.push(Item.createItem('iphoneX','Lucy','Somerset',1150,1200, false));
-        this.itemList.push(Item.createItem('ipad','Larry','Amazon',350,400, false));
+        this.itemList.push(Item.createItem('airpods','Jesse','Somerset',160,10, 200, false));
+        this.itemList.push(Item.createItem('iphoneX','Lucy','Somerset',1150,10,1200, false));
+        this.itemList.push(Item.createItem('ipad','Larry','Amazon',350,10,400, false));
       }
     });
 
@@ -184,7 +187,7 @@ export class Utils {
 
   getTotalAmount() : number {
     return _.reduce(this.itemList, function( sum, o): number{
-      return sum + (o.paid?( o.price - o.cost ):0);
+      return sum + (o.paid?( o.price - o.cost - o.shipmentCost ):0);
     }, 0 );
   }
 
