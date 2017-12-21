@@ -4,6 +4,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { AccountPage } from '../pages/account/account';
+import { HistoryPage } from '../pages/account/history';
 import { ShippingPage } from '../pages/shipping/shipping';
 import { ShippingEditPage } from '../pages/shipping/shippingEdit';
 import { ShippingPopPage } from '../pages/shipping/shippingPop';
@@ -31,6 +32,7 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
   declarations: [
     MyApp,
     AccountPage,
+    HistoryPage,
     ShippingPage,
     ShippingEditPage,
     ShippingPopPage,
@@ -57,6 +59,7 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
   entryComponents: [
     MyApp,
     AccountPage,
+    HistoryPage,
     PurchasePage,
     ShippingPage,
     ShippingEditPage,

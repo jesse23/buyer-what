@@ -23,14 +23,19 @@
       2) Phone
       3) Address
       4) National Identity Number
-***** TODO Group by owner, city, carrier
-***** TODO Shipping type, weight and payment.
+***** TODO Shipping payment.
 ***** Pending
+      1. Group by owner, city, carrier
       1. Shipment type, price per pound, weight.
       1. Add shippment fee with a rough calculator, re-bundle helper.
       5. Add auto assign ID for tracing with package in delivery location.
 **** Acount Page
-     1. Show/Modify cost attribute here
+***** DONE Show/Modify cost attribute here
+***** TODO History Page 
+****** DONE Setup the page
+****** TODO Refactor itemList with date as history key, and latest for unsaved
+****** TODO Save done list to history with today as key
+***** Pending
      2. Concurrency change practice in account:
         1) Original price in US Dollar.
         2) Shipment in CHN.
