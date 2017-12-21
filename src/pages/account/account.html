@@ -1,8 +1,14 @@
 <ion-header>
   <ion-navbar>
+
     <ion-title>
       {{'ACCOUNT' | translate}}
     </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only [navPush]="HistoryPage" [navParams]="{}">
+        <ion-icon name="bookmarks"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 

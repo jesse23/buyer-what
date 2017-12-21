@@ -19,11 +19,23 @@
 
   "SHIPPING": "发货",
   "SHIPPED": "已发货",
+  "SHIPMENT RECORD": "发货记录",
   "SHIPMENT CARRIER": "快递公司",
   "SHIPMENT CHECKING NUMBER": "快递单号",
 
+  "CONTACT": "联系人",
+  "CONTACT NAME": "姓名",
+  "CONTACT PHONE": "电话",
+  "CONTACT ID": "身份证号",
+  "CONTACT STATE": "省份",
+  "CONTACT CITY": "城市",
+  "CONTACT STREET": "街道",
+  "CONTACT POST CODE": "邮政编码",
+
   "ACCOUNT": "账户",
   "TOTAL": "总额",
+
+  "HISTORY": "历史记录",
 
   "ABOUT": "关于"
 }

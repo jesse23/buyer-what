@@ -42,8 +42,43 @@ export class Item {
   }
 }
 
+export class Contact {
+  key      : string;
+  realName : string;
+  phoneNo  : number;
+  id       : string;
+  state    : string;
+  city     : string;
+  street   : string;
+  postCode : number;
+
+  private constructor() {};
+
+  static createContact ( key      : string = '',
+                         realName : string = '',
+                         phoneNo  : number = null,
+                         id       : string = '',
+                         state    : string = '',
+                         city     : string = '',
+                         street   : string = '',
+                         postCode : number = null
+                    ): Contact {
+    let contact = new Contact();
+    contact.key = key;
+    contact.realName = realName;
+    contact.phoneNo = phoneNo;
+    contact.id = id;
+    contact.state = state;
+    contact.city = city;
+    contact.street = street;
+    contact.postCode = postCode;
+    return contact;
+  }
+}
+
 export class Utils {
   public itemList: Item[] = [];
+  public contactList: Contact[] = [];
   public groupBy: string;
 
   constructor( @Inject(forwardRef(() => Storage))  private storage: Storage,
@@ -65,6 +100,42 @@ export class Utils {
       }
     });
 
+    this.storage.get('contacts').then((val) => {
+      if (val){
+
+      } else {
+        this.contactList.push(Contact.createContact( 
+          'Jesse',
+          'Jesse Peng', 
+          1234567891, 
+          '23232x',
+          'MI',
+          'Detroit',
+          '222 test Drive',
+          43172));
+
+        this.contactList.push(Contact.createContact( 
+          'Lucy',
+          'Lucy Lu', 
+          1234567891, 
+          '23232x',
+          'MI',
+          'Detroit',
+          '222 test Drive',
+          43172));
+
+        this.contactList.push(Contact.createContact( 
+          'Larry',
+          'Larry Peng', 
+          1234567891, 
+          '23232x',
+          'MI',
+          'Detroit',
+          '222 test Drive',
+          43172));
+      }
+    });
+
     this.platform.pause.subscribe(e => {
       return this.save();
     });
@@ -75,7 +146,23 @@ export class Utils {
   }
 
   save() : Promise<any> {
-    return this.storage.set('items', this.itemList);
+    return this.storage.set('items', this.itemList).then( () => {
+      return this.storage.set('contacts', this.contactList);
+    });
+  }
+
+  // Contact
+  findOrCreateContact( key: string ) : Contact {
+    var res = null;
+    var matchedList = _.filter(this.contactList, {key:key});
+    if ( matchedList.length == 0 ) {
+      res = Contact.createContact(key);
+      this.contactList.push(res);
+    } else {
+      // return the 1st for now
+      res = matchedList[0];
+    }
+    return res;
   }
 
   // Reader

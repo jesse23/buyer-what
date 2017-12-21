@@ -17,13 +17,14 @@
 ***** DONE Group list by location and owner.
 ***** DONE Use card/title/list to make view nicer.
 **** Shipping Page
-***** TODO Ship tracking number, Shipping weight and shipping carrier.
-***** TODO Contact info:
+***** DONE Ship tracking number shipping carrier.
+***** DONE Contact info:
       1) Real name
       2) Phone
       3) Address
       4) National Identity Number
-***** TODO Group by owner, city, carrier, tracking number.
+***** TODO Group by owner, city, carrier
+***** TODO Shipping type, weight and payment.
 ***** Pending
       1. Shipment type, price per pound, weight.
       1. Add shippment fee with a rough calculator, re-bundle helper.

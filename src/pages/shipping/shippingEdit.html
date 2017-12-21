@@ -1,20 +1,40 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>{{(isNew?'NEW ORDER':'EDIT ORDER') | translate}}</ion-title>
+    <ion-title>{{item.name}}</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
     <ion-list-header>
-      Basic Info
+      {{'CONTACT' | translate}}
     </ion-list-header>
-    <ion-item>{{item.name}}</ion-item>
     <ion-item>{{item.owner}}</ion-item>
+    <ion-item>
+      <ion-input placeholder="{{'CONTACT NAME' | translate}}" type="text" [(ngModel)]="contact.realName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="{{'CONTACT PHONE' | translate}}" type="number" [(ngModel)]="contact.phoneNo"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="{{'CONTACT ID' | translate}}" type="text" [(ngModel)]="contact.id"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="{{'CONTACT STATE' | translate}}" type="text" [(ngModel)]="contact.state"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="{{'CONTACT CITY' | translate}}" type="text" [(ngModel)]="contact.city"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="{{'CONTACT STREET' | translate}}" type="text" [(ngModel)]="contact.street"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="{{'CONTACT POST CODE' | translate}}" type="number" [(ngModel)]="contact.postCode"></ion-input>
+    </ion-item>
   </ion-list>
   <ion-list>
     <ion-list-header>
-      Shipping Info
+      {{'SHIPMENT RECORD' | translate}}
     </ion-list-header>
     <ion-item>
       <ion-input placeholder="{{'SHIPMENT CARRIER' | translate}}" type="text" [(ngModel)]="item.carrier"></ion-input>

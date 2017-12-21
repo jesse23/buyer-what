@@ -19,11 +19,23 @@
 
   "SHIPPING": "Shipping",
   "SHIPPED": "Shipped",
+  "SHIPMENT RECORD": "Shipment Record",
   "SHIPMENT CARRIER": "Shipping Carrier",
   "SHIPMENT CHECKING NUMBER": "Tracking Number",
 
+  "CONTACT": "Contact",
+  "CONTACT NAME": "Name",
+  "CONTACT PHONE": "Phone Number",
+  "CONTACT ID": "Identity Number",
+  "CONTACT STATE": "State",
+  "CONTACT CITY": "City",
+  "CONTACT STREET": "Street",
+  "CONTACT POST CODE": "Post Code",
+
   "ACCOUNT": "Account",
   "TOTAL": "Total",
+
+  "HISTORY": "History",
 
   "ABOUT": "About"
 }
