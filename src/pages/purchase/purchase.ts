@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { NavController, PopoverController } from 'ionic-angular';
 import { Item, Utils } from '../../app/utils';
 import { PurchasePopPage } from './purchasePop';
-import { OrderEditPage } from '../order/orderEdit';
+import { PurchaseEditPage } from './purchaseEdit';
 
 @Component({
   selector: 'page-purchase',
@@ -17,7 +17,7 @@ export class PurchasePage {
   listGroup: Item[][];
 
   constructor(public navCtrl: NavController, private popoverCtrl: PopoverController, public utils: Utils) {
-    this.pushPage = OrderEditPage;
+    this.pushPage = PurchaseEditPage;
     this.groupBy = "location";
   }
 
@@ -50,7 +50,7 @@ export class PurchasePage {
   }
 
   pushItemEditPage(item: Item){
-      this.navCtrl.push(OrderEditPage, {item:item,showCost:true,showPurchased:true});
+      this.navCtrl.push(PurchaseEditPage, {item:item});
   }
 
 }

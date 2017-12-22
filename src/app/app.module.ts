@@ -4,6 +4,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { AccountPage } from '../pages/account/account';
+import { AccountEditPage } from '../pages/account/accountEdit';
 import { HistoryPage } from '../pages/account/history';
 import { ShippingPage } from '../pages/shipping/shipping';
 import { ShippingEditPage } from '../pages/shipping/shippingEdit';
@@ -11,6 +12,7 @@ import { ShippingPopPage } from '../pages/shipping/shippingPop';
 import { OrderPage } from '../pages/order/order';
 import { OrderEditPage } from '../pages/order/orderEdit';
 import { PurchasePage } from '../pages/purchase/purchase';
+import { PurchaseEditPage } from '../pages/purchase/purchaseEdit';
 import { PurchasePopPage } from '../pages/purchase/purchasePop';
 import { TabsPage } from '../pages/tabs/tabs';
 
@@ -32,14 +34,16 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
   declarations: [
     MyApp,
     AccountPage,
+    AccountEditPage,
     HistoryPage,
     ShippingPage,
     ShippingEditPage,
     ShippingPopPage,
     PurchasePage,
+    PurchasePopPage,
+    PurchaseEditPage,
     OrderPage,
     OrderEditPage,
-    PurchasePopPage,
     TabsPage
   ],
   imports: [
@@ -59,14 +63,16 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
   entryComponents: [
     MyApp,
     AccountPage,
+    AccountEditPage,
     HistoryPage,
     PurchasePage,
+    PurchasePopPage,
+    PurchaseEditPage,
     ShippingPage,
     ShippingEditPage,
     ShippingPopPage,
     OrderPage,
     OrderEditPage,
-    PurchasePopPage,
     TabsPage
   ],
   providers: [

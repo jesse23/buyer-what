@@ -95,6 +95,7 @@ export class Utils {
         // HC for trackNo
         _.map(val, (o:Item) => {if(!o.carrier){o.carrier=''}});
         _.map(val, (o:Item) => {if(!o.trackNo){o.trackNo=''}});
+        _.map(val, (o:Item) => {if(!o.trackNo){o.shipmentCost=0}});
         this.itemList = val;
       } else {
         this.itemList.push(Item.createItem('airpods','Jesse','Somerset',160,10, 200, false));
@@ -187,7 +188,7 @@ export class Utils {
 
   getTotalAmount() : number {
     return _.reduce(this.itemList, function( sum, o): number{
-      return sum + (o.paid?( o.price - o.cost - o.shipmentCost ):0);
+      return sum + (o.paid?( o.price - (o.cost?o.cost:0) - (o.shipmentCost?o.shipmentCost:0) ):0);
     }, 0 );
   }
 

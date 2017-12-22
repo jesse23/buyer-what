@@ -36,6 +36,7 @@
 ****** DONE Setup the page
 ****** TODO Refactor itemList with date as history key, and latest for unsaved
 ****** TODO Save done list to history with today as key
+***** TODO Which one should pay how much?
 ***** Pending
      2. Concurrency change practice in account:
         1) Original price in US Dollar.

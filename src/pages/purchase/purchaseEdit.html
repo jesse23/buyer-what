@@ -16,6 +16,9 @@
       <ion-input placeholder="{{'ORDER LOCATION' | translate}}" type="text" [(ngModel)]="item.location"></ion-input>
     </ion-item>
     <ion-item>
+      <ion-input placeholder="{{'ORDER COST' | translate}}" type="number" [(ngModel)]="item.cost"></ion-input>
+    </ion-item>
+    <ion-item>
       <ion-input placeholder="{{'ORDER PRICE' | translate}}" type="number" [(ngModel)]="item.price"></ion-input>
     </ion-item>
     <ion-item>
@@ -24,6 +27,10 @@
     <ion-item>
       <ion-label [ngClass]="'paid-toogle'">{{'PAID' | translate}}</ion-label>
       <ion-toggle [(ngModel)]="item.paid"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label [ngClass]="'paid-toogle'">{{'PURCHASED' | translate}}</ion-label>
+      <ion-toggle [(ngModel)]="item.purchased"></ion-toggle>
     </ion-item>
     <button ion-button full (click)="createOrder()" [disabled]="!item.name">
       {{'OK' | translate}}

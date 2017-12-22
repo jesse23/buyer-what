@@ -32,13 +32,7 @@ import { Utils } from '../../app/utils';
 })
 export class OrderPage {
 
-  pushPage: any;
-  
-  constructor(public navCtrl: NavController, public utils: Utils ) {
-    this.pushPage = OrderEditPage;
+  constructor(editPage: OrderEditPage, navCtrl: NavController, public utils: Utils ) {
   }
 
-  print( obj: any ) {
-    this.utils.popMsg(obj);
-  }
 }

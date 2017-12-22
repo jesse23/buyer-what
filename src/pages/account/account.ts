@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { OrderEditPage } from '../order/orderEdit';
+import { AccountEditPage } from './accountEdit';
 import { HistoryPage } from './history';
 import { Utils } from '../../app/utils';
 
@@ -14,7 +14,7 @@ export class AccountPage {
   historyPage: any;
 
   constructor(public navCtrl: NavController, public utils: Utils ) {
-    this.pushPage = OrderEditPage;
+    this.pushPage = AccountEditPage;
     this.historyPage = HistoryPage;
   }
 
