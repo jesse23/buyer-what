@@ -10,11 +10,11 @@ import { Utils } from '../../app/utils';
 })
 export class AccountPage {
 
-  pushPage: any;
+  editPage: any;
   historyPage: any;
 
   constructor(public navCtrl: NavController, public utils: Utils ) {
-    this.pushPage = AccountEditPage;
+    this.editPage = AccountEditPage;
     this.historyPage = HistoryPage;
   }
 

@@ -10,13 +10,13 @@ import { Item, Utils } from '../../app/utils';
   templateUrl: 'shipping.html'
 })
 export class ShippingPage {
-  pushPage: any;
+  editPage: any;
   groupBy: string;
   rawList: Item[];
   listGroup: Item[][];
 
   constructor(public navCtrl: NavController, private popoverCtrl: PopoverController, public utils: Utils) {
-    this.pushPage = ShippingEditPage;
+    this.editPage = ShippingEditPage;
     this.groupBy = "owner";
   }
 

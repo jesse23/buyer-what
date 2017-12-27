@@ -14,8 +14,8 @@
 <ion-content>
   <ion-card>
   <ion-list>
-    <button ion-item detail-none *ngFor="let item of utils.itemList" [navPush]="pushPage" [navParams]="{item:item}">
-      <ion-label>{{item.name}} - {{item.owner}}</ion-label>
+    <button ion-item detail-none *ngFor="let item of utils.itemList" [navPush]="editPage" [navParams]="{item:item}">
+      <ion-label>{{item.name}}/{{item.owner}}</ion-label>
       <ion-badge item-end [color]="(item.paid &amp;&amp; (item.price - (item.cost?item.cost:0) - (item.shipmentCost?item.shipmentCost:0) ) > 0)? 'primary':'danger'">{{item.price - (item.cost?item.cost:0) - (item.shipmentCost?item.shipmentCost:0)}}</ion-badge>
     </button>
   </ion-list>

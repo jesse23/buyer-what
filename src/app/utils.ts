@@ -13,9 +13,12 @@ export class Item {
 
   paid : boolean;
   purchased: boolean;
+  deleted: boolean;
 
   carrier: string;
   trackNo: string;
+
+  shipmentDate: Date;
 
   private constructor() {};
 
@@ -28,7 +31,8 @@ export class Item {
                       paid:       boolean = false, 
                       purchased:  boolean = false, 
                       carrier:    string  = '',
-                      trackNo:    string  = ''
+                      trackNo:    string  = '',
+                      shipmentDate: Date = null,
                     ): Item {
     let item = new Item();
     item.name = name;
@@ -41,6 +45,8 @@ export class Item {
     item.purchased = purchased;
     item.carrier = carrier;
     item.trackNo = trackNo;
+    item.shipmentDate = shipmentDate;
+    item.deleted = false;
     return item;
   }
 }
@@ -87,16 +93,18 @@ export class Utils {
   constructor( @Inject(forwardRef(() => Storage))  private storage: Storage,
                @Inject(forwardRef(() => Platform)) private platform: Platform,
                @Inject(forwardRef(() => ToastController)) private toastCtrl: ToastController ) { 
+
   }
 
   load() {
     this.storage.get('items').then((val) => {
       if ( val ){
         // HC for trackNo
-        _.map(val, (o:Item) => {if(!o.carrier){o.carrier=''}});
-        _.map(val, (o:Item) => {if(!o.trackNo){o.trackNo=''}});
-        _.map(val, (o:Item) => {if(!o.trackNo){o.shipmentCost=0}});
         this.itemList = val;
+        // this.itemList.push(Item.createItem('airpods','Jesse','Somerset',160,10, 200, true,true,'USPS','ship001', new Date('2017-11-01')));
+        // this.itemList.push(Item.createItem('iphoneX','Lucy','Somerset',1150,10,1200, true,true,'USPS','ship001', new Date('2017-11-01')));
+        // this.itemList.push(Item.createItem('ipad','Larry','Amazon',350,10,400, true,true,'USPS','ship001', new Date('2017-11-01')));
+        _.map(val, (o:Item) => {if(!o.deleted){o.deleted=false}});
       } else {
         this.itemList.push(Item.createItem('airpods','Jesse','Somerset',160,10, 200, false));
         this.itemList.push(Item.createItem('iphoneX','Lucy','Somerset',1150,10,1200, false));
@@ -106,7 +114,39 @@ export class Utils {
 
     this.storage.get('contacts').then((val) => {
       if (val){
+        this.contactList = val;
+        /*
+        this.contactList = [];
+        this.contactList.push(Contact.createContact( 
+          'Jesse',
+          'Jesse Peng', 
+          1234567891, 
+          '23232x',
+          'MI',
+          'Detroit',
+          '222 test Drive',
+          43172));
 
+        this.contactList.push(Contact.createContact( 
+          'Lucy',
+          'Lucy Lu', 
+          1234567891, 
+          '23232x',
+          'MI',
+          'Detroit',
+          '222 test Drive',
+          43172));
+
+        this.contactList.push(Contact.createContact( 
+          'Larry',
+          'Larry Peng', 
+          1234567891, 
+          '23232x',
+          'MI',
+          'Detroit',
+          '222 test Drive',
+          43172));
+          */
       } else {
         this.contactList.push(Contact.createContact( 
           'Jesse',
@@ -137,6 +177,7 @@ export class Utils {
           'Detroit',
           '222 test Drive',
           43172));
+          
       }
     });
 
@@ -150,9 +191,14 @@ export class Utils {
   }
 
   save() : Promise<any> {
+    this.cleanList();
     return this.storage.set('items', this.itemList).then( () => {
       return this.storage.set('contacts', this.contactList);
     });
+  }
+
+  cleanList() {
+    this.itemList = _.filter(this.itemList, { deleted: false });
   }
 
   // Contact
@@ -170,12 +216,8 @@ export class Utils {
   }
 
   // Reader
-  getShippingList() : Item[] {
-    return _.filter(this.itemList, { purchased: true});
-  }
-
-  getPurchaseList() : Item[] {
-    return _.filter(this.itemList, (o:Item):boolean => {return o.trackNo.length>0});
+  getAvailableList() : Item[] {
+    return _.filter(this.itemList, { trackNo: '', deleted: false });
   }
 
   getUnPurchasedCount() : number {

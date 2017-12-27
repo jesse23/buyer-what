@@ -1,3 +1,4 @@
+import _ from "lodash";
 import { Component,
 trigger,
 state,
@@ -6,7 +7,7 @@ transition,
 animate } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { OrderEditPage } from './orderEdit';
-import { Utils } from '../../app/utils';
+import { Utils, Item } from '../../app/utils';
 
 @Component({
   selector: 'page-order',
@@ -32,7 +33,24 @@ import { Utils } from '../../app/utils';
 })
 export class OrderPage {
 
-  constructor(editPage: OrderEditPage, navCtrl: NavController, public utils: Utils ) {
+    editPage: any;
+    itemList: Item[];
+
+  constructor( navCtrl: NavController, public utils: Utils ) {
+      this.editPage = OrderEditPage;
+      this.itemList = this.getList();
+  }
+
+  ionViewDidEnter(){
+    this.itemList = this.getList();
+  }
+
+  ionViewDidLeave(){
+    this.utils.cleanList();
+  }
+
+  getList() : Item[]{
+    return _.filter(this.utils.itemList, (o:Item):boolean => {return o.trackNo.length==0});
   }
 
 }

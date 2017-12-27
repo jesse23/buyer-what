@@ -11,13 +11,11 @@ import { PurchaseEditPage } from './purchaseEdit';
 })
 export class PurchasePage {
 
-  pushPage: any;
   groupBy: string;
   rawList: Item[];
   listGroup: Item[][];
 
   constructor(public navCtrl: NavController, private popoverCtrl: PopoverController, public utils: Utils) {
-    this.pushPage = PurchaseEditPage;
     this.groupBy = "location";
   }
 

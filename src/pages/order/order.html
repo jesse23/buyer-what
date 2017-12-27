@@ -2,7 +2,7 @@
   <ion-navbar>
     <ion-title>{{'ORDER' | translate}}</ion-title>
     <ion-buttons end>
-      <button ion-button icon-only [navPush]="pushPage">
+      <button ion-button icon-only [navPush]="editPage">
         <ion-icon name="add"></ion-icon>
       </button>
     </ion-buttons>
@@ -11,13 +11,13 @@
 
 <ion-content >
   <ion-list>
-    <ion-item-sliding *ngFor="let item of utils.itemList; let i = index">
-      <button ion-item detail-none [navPush]="pushPage" [navParams]="{item:item}">
+    <ion-item-sliding *ngFor="let item of utils.getAvailableList()">
+      <button ion-item detail-none [navPush]="editPage" [navParams]="{item:item}">
         <ion-icon name="leaf" item-start></ion-icon>
         <ion-label>{{item.name}}/{{item.owner}}</ion-label>
       </button>
-      <ion-item-options icon-start (ionSwipe)="utils.itemList.splice(i,1)" side="left">
-          <button ion-button expandable color="danger" (click)="utils.itemList.splice(i,1)">
+      <ion-item-options icon-start (ionSwipe)="item.deleted = true" side="left">
+          <button ion-button expandable color="danger" (click)="item.deleted = true">
             <ion-icon name="trash"></ion-icon>
           </button>
       </ion-item-options>

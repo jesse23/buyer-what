@@ -6,6 +6,9 @@
 
 <ion-content>
   <ion-list>
+    <ion-list-header>
+      {{'SHIPMENT RECORD' | translate}}
+    </ion-list-header>
     <ion-item>
       <ion-input placeholder="{{'ORDER NAME' | translate}}" type="text" [(ngModel)]="item.name"></ion-input>
     </ion-item>
@@ -13,16 +16,21 @@
       <ion-input placeholder="{{'ORDER OWNER' | translate}}" type="text" [(ngModel)]="item.owner"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input placeholder="{{'ORDER LOCATION' | translate}}" type="text" [(ngModel)]="item.location"></ion-input>
+      <ion-input placeholder="{{'SHIPMENT CHECKING NUMBER' | translate}}" type="text" [(ngModel)]="item.trackNo"></ion-input>
     </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-list-header>
+      {{'PAYMENT INFO' | translate}}
+    </ion-list-header>
     <ion-item>
       <ion-input placeholder="{{'ORDER COST' | translate}}" type="number" [(ngModel)]="item.cost"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input placeholder="{{'ORDER PRICE' | translate}}" type="number" [(ngModel)]="item.price"></ion-input>
+      <ion-input placeholder="{{'SHIPMENT COST' | translate}}" type="number" [(ngModel)]="item.shipmentCost"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input placeholder="{{'SHIPMENT CHECKING NUMBER' | translate}}" type="text" [(ngModel)]="item.trackNo"></ion-input>
+      <ion-input placeholder="{{'ORDER PRICE' | translate}}" type="number" [(ngModel)]="item.price"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label [ngClass]="'paid-toogle'">{{'PAID' | translate}}</ion-label>
