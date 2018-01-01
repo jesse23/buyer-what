@@ -23,7 +23,8 @@
       2) Phone
       3) Address
       4) National Identity Number
-***** TODO Shipping payment.
+***** DONE Shipping payment.
+***** TODO Set shipment date.
 ***** Pending
       1. Group by owner, city, carrier
       1. Shipment type, price per pound, weight.

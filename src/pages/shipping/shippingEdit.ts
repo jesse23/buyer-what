@@ -22,4 +22,8 @@ export class ShippingEditPage {
   createOrder() {
     this.navCtrl.pop();
   }
+
+  doSomething( item: Item, $event: Event) {
+    item.shipmentDate = new Date();
+  }
 }

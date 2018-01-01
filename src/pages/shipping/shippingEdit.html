@@ -12,7 +12,7 @@
       <ion-input placeholder="{{'SHIPMENT CARRIER' | translate}}" type="text" [(ngModel)]="item.carrier"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input placeholder="{{'SHIPMENT CHECKING NUMBER' | translate}}" type="text" [(ngModel)]="item.trackNo"></ion-input>
+      <ion-input placeholder="{{'SHIPMENT CHECKING NUMBER' | translate}}" type="text" (ngModelChange)="doSomething(item, $event)" [(ngModel)]="item.trackNo"></ion-input>
     </ion-item>
     <ion-item>
       <ion-input placeholder="{{'SHIPMENT COST' | translate}}" type="number" [(ngModel)]="item.shipmentCost"></ion-input>
