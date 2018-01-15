@@ -4,7 +4,7 @@
       {{'ACCOUNT' | translate}}
     </ion-title>
     <ion-buttons end>
-      <button ion-button icon-only [navPush]="historyPage" [navParams]="">
+      <button ion-button icon-only (click)="presentRadioPopover($event)">
         <ion-icon name="more"></ion-icon>
       </button>
     </ion-buttons>
@@ -12,19 +12,36 @@
 </ion-header>
 
 <ion-content>
-  <ion-card>
-  <ion-list>
-    <button ion-item detail-none *ngFor="let item of utils.itemList" [navPush]="editPage" [navParams]="{item:item}">
-      <ion-label>{{item.name}}/{{item.owner}}</ion-label>
-      <ion-badge item-end [color]="(item.paid &amp;&amp; (item.price - (item.cost?item.cost:0) - (item.shipmentCost?item.shipmentCost:0) ) > 0)? 'primary':'danger'">{{item.price - (item.cost?item.cost:0) - (item.shipmentCost?item.shipmentCost:0)}}</ion-badge>
-    </button>
-  </ion-list>
-</ion-card>
-<ion-card>
+  <!--<ion-card>
+    <ion-card-header color="primary">
+      Latest
+    </ion-card-header>
+    <ion-list>
+      <button ion-item detail-none *ngFor="let item of utils.itemList" [navPush]="editPage" [navParams]="{item:item}">
+        <ion-label>{{item.name}}/{{item.shipmentDate}}</ion-label>
+        <ion-badge item-end [color]="(item.paid &amp;&amp; (item.price - (item.cost?item.cost:0) - (item.shipmentCost?item.shipmentCost:0) ) > 0)? 'primary':'danger'">{{item.price - (item.cost?item.cost:0) - (item.shipmentCost?item.shipmentCost:0)}}</ion-badge>
+      </button>
       <ion-item>
-      <ion-label>{{'TOTAL' | translate}}</ion-label>
-      <ion-badge item-end [color]="(utils.getTotalAmount() >= 0)? 'primary':'danger'">{{utils.getTotalAmount()}}</ion-badge>
+        <ion-label>{{'TOTAL' | translate}}</ion-label>
+        <ion-badge item-end [color]="(utils.getTotalAmount() >= 0)? 'primary':'danger'">{{utils.getTotalAmount()}}</ion-badge>
       </ion-item>
-</ion-card>
-
+    </ion-list>
+  </ion-card>-->
+  <ion-card  *ngFor="let group of listGroup">
+    <ion-card-header color="primary">
+      {{group[0][groupBy]}}
+    </ion-card-header>
+    <ion-list>
+      <button ion-item detail-none *ngFor="let item of group" [navPush]="editPage" [navParams]="{item:item}">
+        <!--<ion-label>{{item.name}}/{{item.owner}}</ion-label>-->
+        <ion-label>{{item.name}}/{{item.shipmentDate}}</ion-label>
+        <ion-badge item-end [color]="(item.paid &amp;&amp; (item.price - (item.cost?item.cost:0) - (item.shipmentCost?item.shipmentCost:0) ) > 0)? 'primary':'danger'">{{item.price - (item.cost?item.cost:0) - (item.shipmentCost?item.shipmentCost:0)}}</ion-badge>
+      </button>
+      <ion-item>
+        <ion-label>{{'TOTAL' | translate}}</ion-label>
+        <ion-badge item-end [color]="(utils.getTotalAmount() >= 0)? 'primary':'danger'">{{utils.getTotalAmount()}}</ion-badge>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+  <button ion-button full>Achieve</button>
 </ion-content>

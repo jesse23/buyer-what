@@ -1,14 +1,21 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { Utils } from '../../app/utils';
+import { ViewController, NavParams } from 'ionic-angular';
 
 @Component({
-  selector: 'page-history',
   templateUrl: 'history.html'
 })
 export class HistoryPage {
+  val : string;
 
-  constructor(public navCtrl: NavController, public utils: Utils ) {
+  constructor( private viewCtrl: ViewController, private navParams: NavParams ) {}
+  
+  ngOnInit() {
+    if (this.navParams.data) {
+      this.val = this.navParams.data.val;
+    }
   }
 
+  close(val) {
+    this.viewCtrl.dismiss(val);
+  }
 }
