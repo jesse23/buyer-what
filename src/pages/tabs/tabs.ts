@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { AccountPage } from '../account/account';
 import { PurchasePage } from '../purchase/purchase';
 import { ShippingPage } from '../shipping/shipping';
-import { OrderPage } from '../order/order';
+// import { OrderPage } from '../order/order';
 import { TranslateService } from '@ngx-translate/core';
 import { Utils } from '../../app/utils';
 
@@ -23,8 +23,7 @@ export class TabsPage {
     this.utils.save();
   }
 
-  tab1Root = OrderPage;
-  tab2Root = PurchasePage;
-  tab3Root = ShippingPage;
-  tab4Root = AccountPage;
+  tab1Root = PurchasePage;
+  tab2Root = ShippingPage;
+  tab3Root = AccountPage;
 }

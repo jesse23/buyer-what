@@ -27,10 +27,10 @@
 ***** TODO Set shipment date.
 ***** Pending
       1. Group by owner, city, carrier
-      1. Shipment type, price per pound, weight.
-      1. Add shippment fee with a rough calculator, re-bundle helper.
-      5. Add auto assign ID for tracing with package in delivery location.
-      6. Input one address string, separate word automatically.
+      2. Shipment type, price per pound, weight.
+      3. Add shippment fee with a rough calculator, re-bundle helper.
+      4. Add auto assign ID for tracing with package in delivery location.
+      5. Input one address string, separate word automatically.
 **** Acount Page
 ***** DONE Show/Modify cost attribute here
 ***** TODO History Page 

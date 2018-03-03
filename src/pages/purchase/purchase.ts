@@ -1,9 +1,10 @@
 import _ from "lodash";
 import { Component } from '@angular/core';
-import { NavController, PopoverController } from 'ionic-angular';
+import { NavController, PopoverController, Events } from 'ionic-angular';
 import { Item, Utils } from '../../app/utils';
 import { PurchasePopPage } from './purchasePop';
 import { PurchaseEditPage } from './purchaseEdit';
+import { AddOrderPage } from './addOrderPage';
 
 @Component({
   selector: 'page-purchase',
@@ -11,12 +12,17 @@ import { PurchaseEditPage } from './purchaseEdit';
 })
 export class PurchasePage {
 
+  addOrderPage: any;
   groupBy: string;
   rawList: Item[];
   listGroup: Item[][];
 
-  constructor(public navCtrl: NavController, private popoverCtrl: PopoverController, public utils: Utils) {
+  constructor(public navCtrl: NavController, private popoverCtrl: PopoverController, public utils: Utils, private events: Events) {
     this.groupBy = "location";
+    this.events.subscribe('buyerWhat.contentLoaded', () => {
+      this.listGroup = this.getListGroup(true);
+    });
+    this.addOrderPage = AddOrderPage;
   }
 
   ionViewDidEnter(){

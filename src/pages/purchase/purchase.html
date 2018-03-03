@@ -2,6 +2,9 @@
   <ion-navbar>
     <ion-title>{{'PURCHASE' | translate}}</ion-title>
     <ion-buttons end>
+      <button ion-button icon-only [navPush]="addOrderPage">
+        <ion-icon name="add"></ion-icon>
+      </button>
       <button ion-button icon-only (click)="presentRadioPopover($event)">
         <ion-icon name="more"></ion-icon>
       </button>

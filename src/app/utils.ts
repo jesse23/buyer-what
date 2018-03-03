@@ -1,6 +1,6 @@
 import _ from "lodash";
 import { Storage } from '@ionic/storage';
-import { Platform, ToastController } from 'ionic-angular';
+import { Platform, ToastController, Events } from 'ionic-angular';
 import { Inject, forwardRef } from '@angular/core';
 
 export class Item {
@@ -92,6 +92,7 @@ export class Utils {
 
   constructor( @Inject(forwardRef(() => Storage))  private storage: Storage,
                @Inject(forwardRef(() => Platform)) private platform: Platform,
+               @Inject(forwardRef(() => Events)) private events: Events,
                @Inject(forwardRef(() => ToastController)) private toastCtrl: ToastController ) { 
 
   }
@@ -110,6 +111,7 @@ export class Utils {
         this.itemList.push(Item.createItem('iphoneX','Lucy','Somerset',1150,10,1200, false));
         this.itemList.push(Item.createItem('ipad','Larry','Amazon',350,10,400, false));
       }
+      this.events.publish('buyerWhat.contentLoaded');
     });
 
     this.storage.get('contacts').then((val) => {

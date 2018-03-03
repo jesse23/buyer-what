@@ -3,10 +3,10 @@ import { NavController, NavParams } from 'ionic-angular';
 import { Utils, Item } from '../../app/utils';
 
 @Component({
-  selector: 'page-orderEdit',
-  templateUrl: 'orderEdit.html'
+  selector: 'page-addOrder',
+  templateUrl: 'addOrderPage.html'
 })
-export class OrderEditPage {
+export class AddOrderPage {
 
   item: Item;
   showCost: boolean;
