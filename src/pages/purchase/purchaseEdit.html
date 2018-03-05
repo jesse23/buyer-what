@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>{{(isNew?'NEW ORDER':'EDIT ORDER') | translate}}</ion-title>
+    <ion-title>{{'EDIT ORDER' | translate}}</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -31,6 +31,9 @@
     </ion-item>
     <button ion-button full (click)="createOrder()" [disabled]="!item.name">
       {{'OK' | translate}}
+    </button>
+    <button ion-button full color="danger" (click)="deleteOrder()" [disabled]="!item.name">
+      {{'DELETE' | translate}}
     </button>
   </ion-list>
 </ion-content>

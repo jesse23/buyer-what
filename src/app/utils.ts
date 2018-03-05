@@ -218,22 +218,22 @@ export class Utils {
   }
 
   // Reader
-  getAvailableList() : Item[] {
-    return _.filter(this.itemList, { trackNo: '', deleted: false });
-  }
-
   getUnPurchasedCount() : number {
-    return _.filter(this.itemList, { purchased: false }).length;
+    return _.filter(this.itemList, { purchased: false, deleted: false }).length;
   }
 
   getUnShippedCount() : number {
     return _.filter(this.itemList, (o:Item):boolean => {return o.purchased && (o.trackNo.length==0)}).length;
   }
 
-  getTotalAmount() : number {
+  getTotalAmount( items: Item[] ) : number {
     return _.reduce(this.itemList, function( sum, o): number{
       return sum + (o.paid?( o.price - (o.cost?o.cost:0) - (o.shipmentCost?o.shipmentCost:0) ):0);
     }, 0 );
+  }
+
+  getAvailablePurchaseList(): Item[] {
+    return _.filter(this.itemList, (o:Item):boolean => {return o.trackNo.length==0 && o.deleted == false});
   }
 
   // Test Helper

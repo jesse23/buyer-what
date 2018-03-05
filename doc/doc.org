@@ -24,9 +24,9 @@
       3) Address
       4) National Identity Number
 ***** DONE Shipping payment.
-***** TODO Set shipment date.
+***** DONE Set shipment date.
+***** DONE Group by owner carrier
 ***** Pending
-      1. Group by owner, city, carrier
       2. Shipment type, price per pound, weight.
       3. Add shippment fee with a rough calculator, re-bundle helper.
       4. Add auto assign ID for tracing with package in delivery location.

@@ -14,26 +14,22 @@ export class PurchasePage {
 
   addOrderPage: any;
   groupBy: string;
-  rawList: Item[];
   listGroup: Item[][];
 
   constructor(public navCtrl: NavController, private popoverCtrl: PopoverController, public utils: Utils, private events: Events) {
     this.groupBy = "location";
     this.events.subscribe('buyerWhat.contentLoaded', () => {
-      this.listGroup = this.getListGroup(true);
+      this.listGroup = this.getListGroup();
     });
     this.addOrderPage = AddOrderPage;
   }
 
   ionViewDidEnter(){
-    this.listGroup = this.getListGroup(true);
+    this.listGroup = this.getListGroup();
   }
 
-  getListGroup(updateRawList: boolean) : Item[][]{
-    if ( updateRawList ){
-      this.rawList = _.filter(this.utils.itemList, (o:Item):boolean => {return o.trackNo.length==0});
-    }
-    return _.values(_.groupBy(this.rawList, this.groupBy ));
+  getListGroup() : Item[][]{
+    return _.values(_.groupBy(this.utils.getAvailablePurchaseList(), this.groupBy ));
   }
 
   presentRadioPopover(ev: UIEvent) {
@@ -48,7 +44,7 @@ export class PurchasePage {
     popover.onDidDismiss(data => {
       if ( data ) {
         this.groupBy = data;
-        this.listGroup = this.getListGroup(false)
+        this.listGroup = this.getListGroup()
       }
     });
   }
