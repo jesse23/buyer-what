@@ -25,6 +25,10 @@ export class AddOrderPage {
   
   createOrder() {
     if ( this.isNew ) {
+      if ( typeof this.item.price === 'string' ){
+        // Don't know why but put WA here for now.
+        this.item.price = parseInt(this.item.price);
+      }
       this.utils.itemList.push(this.item);
     } else {
     }
