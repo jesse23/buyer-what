@@ -228,7 +228,7 @@ export class Utils {
 
   getTotalAmount( items: Item[] ) : number {
     return _.reduce(items, function( sum, o): number{
-      return sum + ( o.paid? 0 : o.price );
+      return sum + ( (o.paid === true)? 0 : o.price );
       // return sum + ( o.price - (o.cost?o.cost:0) - (o.shipmentCost?o.shipmentCost:0));
     }, 0 );
   }

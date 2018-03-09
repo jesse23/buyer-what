@@ -20,7 +20,7 @@ export class AccountPage {
   constructor(public navCtrl: NavController, private popoverCtrl: PopoverController, public utils: Utils ) {
     this.editPage = AccountEditPage;
     this.historyPage = HistoryPage;
-    this.groupBy = "location";
+    this.groupBy = "owner";
   }
 
   ionViewDidEnter(){
