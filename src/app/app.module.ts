@@ -3,9 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
+import { SummaryPage } from '../pages/summary/summary';
+import { SummaryEditPage } from '../pages/summary/summaryEdit';
 import { AccountPage } from '../pages/account/account';
 import { AccountEditPage } from '../pages/account/accountEdit';
-import { HistoryPage } from '../pages/account/history';
 import { ShippingPage } from '../pages/shipping/shipping';
 import { ShippingEditPage } from '../pages/shipping/shippingEdit';
 import { ShippingPopPage } from '../pages/shipping/shippingPop';
@@ -32,9 +33,10 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
 @NgModule({
   declarations: [
     MyApp,
+    SummaryPage,
+    SummaryEditPage,
     AccountPage,
     AccountEditPage,
-    HistoryPage,
     ShippingPage,
     ShippingEditPage,
     ShippingPopPage,
@@ -60,9 +62,10 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    SummaryPage,
+    SummaryEditPage,
     AccountPage,
     AccountEditPage,
-    HistoryPage,
     AddOrderPage,
     PurchasePage,
     PurchasePopPage,

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { AccountPage } from '../account/account';
+import { SummaryPage } from '../summary/summary';
 import { PurchasePage } from '../purchase/purchase';
 import { ShippingPage } from '../shipping/shipping';
 // import { OrderPage } from '../order/order';
@@ -26,4 +27,5 @@ export class TabsPage {
   tab1Root = PurchasePage;
   tab2Root = ShippingPage;
   tab3Root = AccountPage;
+  tab4Root = SummaryPage;
 }

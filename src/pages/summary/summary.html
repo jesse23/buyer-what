@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      {{'ACCOUNT' | translate}}
+      {{'SUMMARY' | translate}}
     </ion-title>
     <ion-buttons end>
     </ion-buttons>
@@ -9,19 +9,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-item-group *ngFor="let group of listGroup">
-    <ion-item-divider color="light">{{group[0][groupBy]}}</ion-item-divider>
-    <ion-item *ngFor="let item of group" (press)="pushItemEditPage(item)">
-      <ion-label>{{item.name}}</ion-label>
-      <ion-badge item-end>{{item.paid? 'PAID' : (item.price)}}</ion-badge>
-      <ion-checkbox [(ngModel)]="item.paid"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label>{{'TOTAL' | translate}}</ion-label>
-      <ion-badge item-end [color]="(utils.getTotalAmount(group) >= 0)? 'primary':'danger'">{{utils.getTotalAmount(group)}}</ion-badge>
-    </ion-item>
-  </ion-item-group>
-  <!--<ion-card  *ngFor="let group of listGroup">
+  <ion-card  *ngFor="let group of listGroup">
     <ion-card-header color="primary">
       {{group[0][groupBy]}}
     </ion-card-header>
@@ -35,5 +23,5 @@
         <ion-badge item-end [color]="(utils.getTotalAmount(group) >= 0)? 'primary':'danger'">{{utils.getTotalAmount(group)}}</ion-badge>
       </ion-item>
     </ion-list>
-  </ion-card>-->
+  </ion-card>
 </ion-content>

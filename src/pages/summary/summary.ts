@@ -1,14 +1,14 @@
 import _ from "lodash";
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { AccountEditPage } from './accountEdit';
+import { SummaryEditPage } from './summaryEdit';
 import { Item, Utils } from '../../app/utils';
 
 @Component({
-  selector: 'page-account',
-  templateUrl: 'account.html'
+  selector: 'page-summary',
+  templateUrl: 'summary.html'
 })
-export class AccountPage {
+export class SummaryPage {
 
   editPage: any;
   groupBy: string;
@@ -16,7 +16,7 @@ export class AccountPage {
   listGroup: Item[][];
 
   constructor(public navCtrl: NavController, public utils: Utils ) {
-    this.editPage = AccountEditPage;
+    this.editPage = SummaryEditPage;
     this.groupBy = "owner";
   }
 
@@ -25,7 +25,7 @@ export class AccountPage {
   }
 
   getListGroup() : Item[][]{
-    return _.values(_.groupBy(_.filter(this.utils.itemList, { 'paid': false }), this.groupBy ));
+    return _.values(_.groupBy(this.utils.itemList, this.groupBy ));
   }
 
 }
