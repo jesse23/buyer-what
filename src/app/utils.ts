@@ -117,38 +117,6 @@ export class Utils {
     this.storage.get('contacts').then((val) => {
       if (val){
         this.contactList = val;
-        /*
-        this.contactList = [];
-        this.contactList.push(Contact.createContact( 
-          'Jesse',
-          'Jesse Peng', 
-          1234567891, 
-          '23232x',
-          'MI',
-          'Detroit',
-          '222 test Drive',
-          43172));
-
-        this.contactList.push(Contact.createContact( 
-          'Lucy',
-          'Lucy Lu', 
-          1234567891, 
-          '23232x',
-          'MI',
-          'Detroit',
-          '222 test Drive',
-          43172));
-
-        this.contactList.push(Contact.createContact( 
-          'Larry',
-          'Larry Peng', 
-          1234567891, 
-          '23232x',
-          'MI',
-          'Detroit',
-          '222 test Drive',
-          43172));
-          */
       } else {
         this.contactList.push(Contact.createContact( 
           'Jesse',
